@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+{{ super() }}
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-3"> </div>
+        <div class = "col-md-6">
+            <h2> Please upload the CSV files below:</h2>
+            {{ wtf.quick_form(form, button_map={'submit':'success'}) }}
+        </div>
+        <div class = "col-md-3"> </div>
+    </div>
+</div>
+
+    <div class="container" id="instructions">
+        <div class="row">
+            <div class = "col-md-3"> </div>
+            <div class = "col-md-6">
+                <h2>Instructions:</h2>
+                <ol>
+                    <li>Download the following files from Dataforma for the client:
+                        <ul>
+                            <li>Roof_Company_Export.csv</li>
+                            <li>WorkOrder_Export.csv</li>
+                            <li>Custom_Project_Export.csv</li>
+                            <li>Custom_Accounts_Receivable_Export.csv</li>
+                        </ul>
+                    </li>
+                    <li>Type the client name in the field above</li>
+                    <li>Add the start date for the report in a month/day/Year format (mm/dd/YYYY)</li>
+                    <li>Upload each of the files in their right spot by clicking on the button that says
+                        "choose file" for each.</li>
+                    <li>Press the green button that says "Press to Create Dashboard"</li>
+                    <li>After the scorecard gets create it, you can download each image by hovering on the
+                        image and pressing the "camera" icon on the upper right hand corner of each image</li>
+                    <li>You may also download the whole scorecard by pressing the green button on the upper left
+                        hand corner of the page that says "Press to Export to PDF"</li>
+                    <li>A PDF will appear on the page that you can download by pressing the "download" button
+                        (it looks like a down arrow) in the upper right corner of the page.</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+{%  endblock %}
+
+

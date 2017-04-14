@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <!-- *** Section 1 *** --->
+    <div class="container">
+        <div class="row">
+            <h2>{{ client_name }} ({{ start_date }} to Present)</h2>
+            <!-- <h3>INSPECTIONS, REPAIRS & PROJECT SAVINGS</h3> -->
+            <div class="col-md-6">
+                <img src={{ dash_list[0]+".png" }} class="piechart" alt="Pie Chart" id="chart">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img src={{ dash_list[10]+".png" }} class="img-responsive" alt="Bar Chart with Subplots">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Inspections:</h4>
+                <ul>
+                    <li>{{ dash_list[11] }}</li>
+                </ul>
+                <h4>Service calls ({{ start_date }} to Date):</h4>
+                <ul>
+                    <li>Number of calls handled by warranty: {{ dash_list[1] }}</li>
+                    <li>Number of billed calls: {{ dash_list[2] }}</li>
+                    <li>Average price per call: {{ dash_list[3] }}</li>
+                </ul>
+                <h4>Repairs:</h4>
+                <ul>
+                    <li>Number of jobs done: {{ dash_list[4] }} repairs</li>
+                    <li>Average price per job: {{ dash_list[5] }}</li>
+                </ul>
+                <h4>Saving Potential on Completed Projects:</h4>
+                <ul>
+                    <li>Average cost per project: {{ dash_list[6] }}</li>
+                    <li>Average spread (high to low bid): {{ dash_list[7] }}</li>
+                    <li>{{ dash_list[8] }} projects completed x average bid spread {{ dash_list[9] }}</li>
+                </ul>
+            </div>
+        </div>
+
+    <!-- *** Section 2 *** --->
+
+    </div>
+{% endblock %}
