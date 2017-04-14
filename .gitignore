@@ -1,0 +1,7 @@
+.idea/
+.env
+config.pyc
+app.pyc
+bpw_graphs.pyc
+.DS_Store
+static/dashboard.pdf
