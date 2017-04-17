@@ -226,8 +226,9 @@ def second_graph_numbers(projects, start_date='2016-01-01'):
     # 1) The Number of completed is num_completed
     projects_now = projects[projects['STATUSDATE'] >= start_date]
     # Correction to '(7) COMPLETED', '(8) ON-HOLD'
-    num_completed = sum(pd.concat([projects[projects["STATUS"] == "(8) COMPLETED"],
-                          projects[projects["STATUS"] == "(7) COMPLETED PENDING W.D.I."]]))
+    # num_completed = sum(projects_now['STATUS'] == '(7) COMPLETED')
+    num_completed = sum(projects_now['STATUS'] == '(8) COMPLETED')
+    num_completed += sum(projects_now['STATUS'] == '(7) COMPLETED PENDING W.D.I.')
 
     # 2) Now let's calculate in-progress projects
 
